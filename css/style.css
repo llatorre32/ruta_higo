@@ -1,10 +1,10 @@
 /* Variables CSS para personalización fácil */
 :root {
   /* Colores principales */
-  --color-primario: #b5570f;        /* Marrón principal */
-  --color-secundario: #8b5e3c;      /* Marrón oscuro */
-  --color-acento: #ec7c13;          /* Naranja */
-  --color-acento-hover: #d97706;    /* Naranja oscuro */
+--color-primario: #59006F;        /* Morado oscuro */
+--color-secundario: #7E6551;      /* Morado claro */
+--color-acento: #db8b2f;          /* Marrón */
+--color-acento-hover: #6B5847; 
   
   /* Colores de fondo */
   --bg-principal: #f6efe6;          /* Beige artesanal */
@@ -199,6 +199,8 @@ body {
 
 .presentacion .imagen {
   flex: 1 1 40%;
+  max-width: 50%;
+  height: auto;
   border-radius: var(--border-radius);
 }
 
@@ -607,3 +609,165 @@ Para personalizar solo algunos elementos específicos:
 - Cambiar bordes: modificar --border-radius
 */
 
+
+.presentacion {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 2rem;
+  background: #fff8f2;
+}
+
+.presentacion .container {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  gap: 2rem;
+}
+
+.presentacion .texto {
+  flex: 1 1 500px;
+  font-family: 'Roboto', sans-serif;
+  color: #4a2c10;
+}
+
+.presentacion .texto h2 {
+  font-size: 2rem;
+  color: #7a3e18;
+  margin-bottom: 1rem;
+}
+
+.presentacion .texto p {
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.presentacion .imagen {
+  flex: 1 1 400px;
+  max-width: 500px;
+  border-radius: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+
+/* ==========================
+   MEDIA QUERIES RESPONSIVAS
+========================== */
+
+/* Pantallas pequeñas (móviles) */
+@media (max-width: 768px) {
+  header .container {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px 20px;
+  }
+
+  .menu {
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+  }
+
+  .banner {
+    padding: 100px 10px;
+    background-position: center 35%;
+  }
+
+  .presentacion {
+    flex-direction: column;
+    padding: 2rem 1rem;
+    text-align: center;
+  }
+
+  .presentacion .texto, 
+  .presentacion .imagen {
+    flex: 1 1 100%;
+    max-width: 100%;
+    padding: 0;
+  }
+
+  .productos .grid,
+  .catalogo-grid,
+  .grid-proceso,
+  .grid-contacto {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .nosotros {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .nosotros .texto,
+  .nosotros .imagen {
+    flex: 1 1 100%;
+    padding: 0;
+  }
+
+  .mision .imagen-mision {
+    max-width: 100%;
+    margin: 1rem 0 0 0;
+  }
+
+  .formulario input,
+  .formulario textarea {
+    font-size: 0.95em;
+  }
+
+  .btn, .card .btn {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* Pantallas medianas (tablets) */
+@media (max-width: 1024px) {
+  .presentacion {
+    flex-direction: column;
+    padding: 3rem 1.5rem;
+  }
+
+  .presentacion .texto,
+  .presentacion .imagen {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+
+  header .container {
+    padding: 10px 30px;
+  }
+
+  .menu {
+    gap: 20px;
+  }
+
+  .banner {
+    padding: 130px 20px;
+  }
+}
+
+/* Ajuste específico de fuentes en móviles */
+@media (max-width: 480px) {
+  .nombre-sitio,
+  .logo-text {
+    font-size: 1.2rem;
+  }
+
+  .presentacion .texto h2 {
+    font-size: 1.5rem;
+  }
+
+  .banner-texto {
+    padding: 20px;
+    font-size: 0.95rem;
+  }
+
+  .gracias h1 {
+    font-size: 1.5rem;
+  }
+
+  .gracias p {
+    font-size: 1em;
+  }
+}
