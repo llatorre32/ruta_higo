@@ -1,0 +1,521 @@
+/* Fuente general y colores */
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  background-color: #f8f3e8;
+  color: #2e2e2e;
+}
+
+.container {
+  width: 90%;
+  max-width: 1100px;
+  margin: auto;
+}
+
+
+/* --- ENCABEZADO PRINCIPAL --- */ /*alinea el logo con el titulo y una barra moderna*/
+header {
+  background-color: #b5570f; /* cambie el marron artesanal por este mas claro */
+  color: white;
+  padding: 10px 40px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15); /* ✅ Sombra sutil */
+  border-bottom: 3px solid #f6efe6; /* ✅ Línea inferior beige */
+  position: sticky;
+  top: 0;
+  z-index: 1000; /* Para que quede arriba al hacer scroll */
+}
+
+header .container {
+  display: flex;
+  align-items: center; /* ✅ Centra verticalmente logo y menú */
+  justify-content: space-between; /* ✅ Espacia logo y menú */
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* --- Logo + nombre del sitio --- */
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo {
+  height: 60px; /*indica el tamaño del logo*/
+  width: auto;
+  border-radius: 50%; /* Opcional: da un toque artesanal */
+}
+
+.nombre-sitio {
+ /* font-size: 1.4rem;*/
+  font-size: 1.6rem;
+ /* font-weight: 600;*/
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: #fff;
+ /* font-family: 'Baloo 2', cursive;*/ /*--lo agregue para cambiar tipo letra--*/
+  font-family: 'Baloo Bhai 2', cursive; /* ✅ Fuente actualizada */
+}
+
+/*este bloque se agrego para la letra mirarlo en el chat lo explica*/
+.logo-text {
+  font-family: 'Baloo Bhai 2', cursive !important;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 0.5px;
+}
+
+/* --- Navegación --- */
+.menu {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  margin: 0;
+}
+
+.menu a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  padding-bottom: 3px;
+  border-bottom: 2px solid transparent;
+}
+
+.menu a:hover,
+.menu a.active {
+  border-bottom: 2px solid #f6efe6; /* Subrayado beige artesanal */
+  text-decoration: none;
+}
+
+/* --- Fondo general de la página --- */
+body {
+  margin: 0;
+  background-color: #f6efe6; /* Beige artesanal suave */
+  font-family: 'Segoe UI', sans-serif;
+  color: #333;
+}
+
+
+
+
+
+
+
+
+/* Banner */
+.banner {
+  background-image: url('../img/banner.jpg');
+  background-size: cover;
+  background-position: center 45%; /* ✅ centra horizontal y verticalmente */
+  background-repeat: no-repeat;
+  color: white;
+  text-align: center;
+  padding: 150px 20px;
+}
+
+.banner-texto {
+  background-color: rgba(0, 0, 0, 0.4);
+  display: inline-block;
+  padding: 30px;
+  border-radius: 10px;
+}
+
+.btn {
+  background-color: #ec7c13;
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: background-color 0.3s ease; /*animacion*/
+}
+
+.btn:hover {
+  background-color: #d97706;
+}
+
+
+
+
+
+
+
+
+/* Presentación */
+.presentacion {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 60px 0;
+  flex-wrap: wrap;
+}
+
+.presentacion .texto {
+  flex: 1 1 50%;
+  padding-right: 20px;
+}
+
+.presentacion .imagen {
+  flex: 1 1 40%;
+  border-radius: 10px;
+}
+
+/* Productos Destacados*/
+.productos {
+  background-color: #fff;
+  padding: 60px 0;
+}
+
+.productos h2 {
+  text-align: center;
+  margin-bottom: 40px;
+  color: #8b5e3c;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.item {
+  background-color: #fdf9f4;
+  border: 1px solid #e3dcd1;
+  border-radius: 10px;
+  overflow: hidden; /* hace que la imagen y bordes coincidan */ /*esta linea se agrego para las imagenes cuadrados*/
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05); /*esta linea se agrego para la imagen se centre*/
+   transition: transform 0.2s ease; /*esta se agrego para la imagen*/
+ 
+}
+
+/*esto se agreguego estas 3 lieas*/
+.item:hover {
+  transform: translateY(-5px);
+}
+
+
+.item img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+}
+
+.item-content {
+  padding: 20px;
+}
+
+.item-content h3 {
+  margin: 15px 0 10px;
+  color: #8b5e3c;
+}
+
+.item-content p {
+  color: #555;
+  font-size: 0.95em;
+  margin-bottom: 15px;
+}
+
+
+
+
+
+
+
+
+/* Pie de página */
+footer {
+  background-color: #8b5e3c;
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+}
+
+.redes img {
+  height: 25px;
+  margin: 0 10px;
+  vertical-align: middle;
+  /*filter: brightness(0) invert(1);*/ /*si coloco esta linea desaparece el logo*/
+}
+
+/* Catálogo de productos */
+.catalogo {
+  background-color: #fff;
+  padding: 60px 0;
+}
+
+.catalogo h1 {
+  text-align: center;
+  color: #8b5e3c;
+  margin-bottom: 10px;
+}
+
+.catalogo .intro {
+  text-align: center;
+  color: #555;
+  max-width: 700px;
+  margin: 0 auto 40px auto;
+  font-size: 1.1em;
+}
+
+.catalogo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+.card {
+  background-color: #fdf9f4;
+  border: 1px solid #e3dcd1;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  transition: transform 0.2s ease;
+  overflow: hidden; /* evita que la imagen sobresalga */ 
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;  
+}
+
+.card-content {     /*este contenedor se agrego es para el contenido interno del card(texto y boton)*/
+  padding: 20px;
+}
+
+.card h3 {
+  margin: 15px 0 10px 0;
+  color: #8b5e3c;
+}
+
+.precio {
+  display: block;
+  font-weight: bold;
+  color: #2e2e2e;
+  margin: 10px 0;
+}
+
+.card .btn {
+  background-color: #ec7c13;
+  color: white;
+  padding: 8px 18px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 0.9em;
+}
+
+.card .btn:hover {
+  background-color: #ec7c13;
+}
+
+/* Sección Nosotros */
+.nosotros {
+  background-color: #fff;
+  padding: 60px 0;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.nosotros .texto {
+  flex: 1 1 50%;
+  padding-right: 20px;
+}
+
+.nosotros h1 {
+  color: #8b5e3c;
+  margin-bottom: 15px;
+}
+
+.nosotros .imagen {
+  flex: 1 1 40%;
+  border-radius: 10px;
+  max-width: 100%;
+}
+
+/* Proceso artesanal */
+.proceso {
+  background-color: #f8f3e8;
+  padding: 60px 0;
+}
+
+.proceso h2 {
+  text-align: center;
+  color: #8b5e3c;
+  margin-bottom: 40px;
+}
+
+.grid-proceso {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+}
+
+.paso {
+  background-color: #fff;
+  border-radius: 10px;
+  text-align: center;
+  padding: 20px;
+  border: 1px solid #e3dcd1;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.paso img {
+  width: 100%;
+  border-radius: 10px;
+  height: 200px;
+  object-fit: cover;
+  margin-bottom: 15px;
+}
+
+.paso h3 {
+  color: #8b5e3c;
+}
+
+/* Misión */
+.mision {
+  background-color: #fff;
+  padding: 60px 0;
+  text-align: center;
+}
+
+.mision h2 {
+  color: #8b5e3c;
+  margin-bottom: 20px;
+}
+
+.mision p {
+  max-width: 800px;
+  margin: 0 auto 30px auto;
+  line-height: 1.6em;
+  color: #333;
+}
+
+.imagen-mision {
+  max-width: 500px;
+  border-radius: 10px;
+}
+
+/* Página de contacto */
+.contacto {
+  background-color: #fff;
+  padding: 60px 0;
+}
+
+.contacto h1 {
+  text-align: center;
+  color: #8b5e3c;
+  margin-bottom: 10px;
+}
+
+.contacto .intro {
+  text-align: center;
+  color: #555;
+  max-width: 700px;
+  margin: 0 auto 40px auto;
+  font-size: 1.1em;
+}
+
+.grid-contacto {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 40px;
+  margin-bottom: 50px;
+}
+
+.formulario label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 600;
+}
+
+.formulario input,
+.formulario textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1em;
+}
+
+.formulario button {
+  background-color: #8b5e3c;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.formulario button:hover {
+  background-color: #6d472d;
+}
+
+.datos h3 {
+  color: #8b5e3c;
+  margin-top: 0;
+}
+
+.redes-contacto img {
+  height: 30px;
+  margin: 10px 10px 0 0;
+ filter: brightness(0.9); /*esta linea estaba con el numero 3 se la cambio a 9 para que se vea mejor el logo*/
+  transition: 0.3s;
+}
+
+.redes-contacto img:hover {
+  filter: brightness(1);
+}
+
+.mapa iframe {
+  border-radius: 10px;
+}
+
+/* Página de confirmación */
+.gracias {
+  background-color: #fff;
+  padding: 100px 20px;
+  text-align: center;
+  color: #2e2e2e;
+}
+
+.gracias h1 {
+  color: #8b5e3c;
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+
+.gracias p {
+  font-size: 1.1em;
+  margin-bottom: 30px;
+}
+
+.logo-gracias {
+  width: 120px;
+  margin-bottom: 20px;
+}
+
+.gracias .btn {
+  background-color: #8b5e3c;
+  color: white;
+  padding: 10px 25px;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: 500;
+}
+
+.gracias .btn:hover {
+  background-color: #6d472d;
+}
+

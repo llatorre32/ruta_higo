@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contacto – Ruta del Higo Catamarca</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" href="img/logo.png" type="image/png">
+</head>
+<body>
+
+  <!-- Encabezado -->
+  <header>
+    <div class="container header-content">
+      <img src="img/logo.png" alt="Ruta del Higo Catamarca" class="logo">
+      <h1 class="logo-text">Ruta del Higo </h1>
+      <nav>
+        <ul class="menu">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="productos.html">Productos</a></li>
+          <li><a href="nosotros.html">Nosotros</a></li>
+          <li><a href="contacto.html" class="active">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Sección de contacto -->
+  <section class="contacto">
+    <div class="container">
+      <h1>Contacto</h1>
+      <p class="intro">
+        Si querés realizar un pedido, consultar disponibilidad o conocer más sobre nuestros productos,
+        completá el formulario o comunicate por nuestras redes sociales.
+      </p>
+
+      <div class="grid-contacto">
+        <!-- Formulario -->
+        <form 
+  class="formulario" 
+  action="https://formsubmit.co/higoscatamarca@gmail.com" 
+  method="POST">
+
+  <label for="nombre">Nombre:</label>
+  <input type="text" id="nombre" name="nombre" required>
+
+  <label for="email">Correo electrónico:</label>
+  <input type="email" id="email" name="email" required>
+
+  <label for="mensaje">Mensaje:</label>
+  <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+
+  <button type="submit" class="btn">Enviar mensaje</button>
+
+  <!-- Opcionales para redirección y control -->
+  <input type="hidden" name="_next" value="https://tusitio.com/gracias.html"> 
+  <input type="hidden" name="_captcha" value="false">
+</form>
+
+
+        <!-- Datos de contacto -->
+        <div class="datos">
+          <h3>Datos del emprendimiento</h3>
+          <p><strong>Ruta del Higo Catamarca</strong></p>
+          <p>📍 El Pantanillo, San Fernando del Valle de Catamarca</p>
+          <p>📞 0383 430-6994</p>
+          <p>📧 higoscatamarca@gmail.com</p>
+
+          <h3>Seguinos</h3>
+          <div class="redes-contacto">
+            <a href="#"><img src="img/facebook.png" alt="Facebook"></a> 
+            <a href="#"><img src="img/instagram.png" alt="Instagram"></a>
+            <a href="#"><img src="img/whatsapp.png" alt="WhatsApp"></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mapa -->
+      <div class="mapa">
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2670.037536051832!2d-65.80332502568002!3d-28.53130106276765!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9424297ed9062de9%3A0xab676b250c7a9379!2sParque%20Industrial%20El%20Pantanillo!5e1!3m2!1ses!2sar!4v1761092360858!5m2!1ses!2sar"
+
+          width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy">
+        </iframe>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Pie de página -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Ruta del Higo Catamarca. Todos los derechos reservados.</p>
+      <div class="redes">
+        <a href="#"><img src="img/facebook.png" alt="Facebook"></a>
+        <a href="#"><img src="img/instagram.png" alt="Instagram"></a>
+        <a href="#"><img src="img/whatsapp.png" alt="WhatsApp"></a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
