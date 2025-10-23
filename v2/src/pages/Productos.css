@@ -1,0 +1,113 @@
+/* Página de productos */
+.productos-page {
+  min-height: 100vh;
+}
+
+.catalogo {
+  padding: var(--padding-seccion);
+  background-color: var(--bg-principal);
+}
+
+.catalogo h1 {
+  text-align: center;
+  color: var(--color-primario);
+  margin-bottom: 20px;
+  font-size: 2.8rem;
+}
+
+.intro {
+  text-align: center;
+  font-size: 1.2rem;
+  max-width: 800px;
+  margin: 0 auto 50px;
+  color: var(--texto-claro);
+  line-height: 1.7;
+}
+
+.catalogo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.card {
+  background-color: var(--bg-blanco);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  box-shadow: var(--sombra-suave);
+  transition: var(--transicion-normal);
+  display: flex;
+  flex-direction: column;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+}
+
+.card img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+
+.card-content {
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.card h3 {
+  color: var(--color-primario);
+  margin-bottom: 15px;
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+.card p {
+  color: var(--texto-claro);
+  line-height: 1.6;
+  margin-bottom: 20px;
+  flex-grow: 1;
+}
+
+.precio {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-acento);
+  margin-bottom: 20px;
+  display: block;
+}
+
+.card .btn {
+  width: 100%;
+  padding: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-top: auto;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .catalogo h1 {
+    font-size: 2.2rem;
+  }
+  
+  .intro {
+    font-size: 1.1rem;
+    margin-bottom: 40px;
+  }
+  
+  .catalogo-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .card-content {
+    padding: 20px;
+  }
+}

@@ -1,0 +1,120 @@
+/* Variables CSS para personalización fácil */
+:root {
+  /* Colores principales */
+  --color-primario: #59006F;        /* Morado oscuro */
+  --color-secundario: #7E6551;      /* Morado claro */
+  --color-acento: #db8b2f;          /* Marrón */
+  --color-acento-hover: #6B5847; 
+  
+  /* Colores de fondo */
+  --bg-principal: #f6efe6;          /* Beige artesanal */
+  --bg-secundario: #f8f3e8;         /* Beige claro */
+  --bg-blanco: #fff;                /* Blanco */
+  --bg-card: #fdf9f4;               /* Fondo de tarjetas */
+  
+  /* Colores de texto */
+  --texto-principal: #2e2e2e;       /* Texto principal */
+  --texto-secundario: #333;         /* Texto secundario */
+  --texto-claro: #555;              /* Texto claro */
+  --texto-blanco: #fff;             /* Texto blanco */
+  
+  /* Bordes y sombras */
+  --borde-claro: #e3dcd1;           /* Borde claro */
+  --sombra-suave: 0 2px 6px rgba(0,0,0,0.05);
+  --sombra-header: 0 2px 8px rgba(0, 0, 0, 0.15);
+  
+  /* Tipografía */
+  --fuente-principal: 'Poppins', sans-serif;
+  --fuente-titulo: 'Baloo Bhai 2', cursive;
+  --fuente-general: 'Segoe UI', sans-serif;
+  
+  /* Espaciado */
+  --padding-seccion: 60px 0;
+  --border-radius: 10px;
+  --border-radius-small: 5px;
+  
+  /* Transiciones */
+  --transicion-rapida: 0.2s ease;
+  --transicion-normal: 0.3s ease;
+}
+
+/* Fuente general y colores */
+body {
+  font-family: var(--fuente-principal);
+  margin: 0;
+  background-color: var(--bg-secundario);
+  color: var(--texto-principal);
+}
+
+.container {
+  width: 90%;
+  max-width: 1100px;
+  margin: auto;
+}
+
+/* Botones */
+.btn {
+  background-color: var(--color-acento);
+  color: var(--texto-blanco);
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: var(--border-radius-small);
+  transition: var(--transicion-normal);
+  border: none;
+  cursor: pointer;
+  display: inline-block;
+  text-align: center;
+}
+
+.btn:hover {
+  background-color: var(--color-acento-hover);
+}
+
+/* Títulos */
+h1, h2, h3 {
+  font-family: var(--fuente-titulo);
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Grid genérico */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .container {
+    width: 95%;
+  }
+  
+  h1 {
+    font-size: 2rem;
+  }
+  
+  h2 {
+    font-size: 1.5rem;
+  }
+  
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}

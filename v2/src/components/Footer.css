@@ -1,0 +1,57 @@
+/* Pie de página */
+footer {
+  background-color: var(--color-primario);
+  color: var(--texto-blanco);
+  text-align: center;
+  padding: 30px 20px;
+  margin-top: 60px;
+}
+
+footer .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+footer p {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.redes {
+  display: flex;
+  gap: 15px;
+}
+
+.redes a {
+  display: inline-block;
+  transition: var(--transicion-normal);
+}
+
+.redes a:hover {
+  transform: scale(1.1);
+}
+
+.redes img {
+  width: 30px;
+  height: 30px;
+  filter: brightness(0) invert(1); /* Hace las imágenes blancas */
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  footer .container {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  footer p {
+    order: 2;
+  }
+  
+  .redes {
+    order: 1;
+  }
+}

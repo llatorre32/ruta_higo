@@ -1,0 +1,151 @@
+/* Banner */
+.banner {
+  background-size: cover;
+  background-position: center 45%;
+  background-repeat: no-repeat;
+  color: white;
+  text-align: center;
+  padding: 150px 20px;
+  position: relative;
+}
+
+.banner-texto {
+  background-color: rgba(0, 0, 0, 0.4);
+  display: inline-block;
+  padding: 30px;
+  border-radius: var(--border-radius);
+}
+
+.banner h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.banner p {
+  font-size: 1.3rem;
+  margin-bottom: 30px;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+/* Presentación */
+.presentacion {
+  padding: var(--padding-seccion);
+  background-color: var(--bg-blanco);
+}
+
+.presentacion .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.presentacion .texto {
+  flex: 1 1 50%;
+  min-width: 300px;
+}
+
+.presentacion .imagen {
+  flex: 1 1 40%;
+  max-width: 500px;
+  width: 100%;
+  border-radius: var(--border-radius);
+  box-shadow: var(--sombra-suave);
+}
+
+.presentacion h2 {
+  text-align: left;
+  color: var(--color-primario);
+  margin-bottom: 30px;
+}
+
+.presentacion p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin-bottom: 20px;
+  color: var(--texto-claro);
+}
+
+/* Productos destacados */
+.productos {
+  padding: var(--padding-seccion);
+  background-color: var(--bg-principal);
+}
+
+.productos h2 {
+  color: var(--color-primario);
+  margin-bottom: 50px;
+}
+
+.productos .grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.productos .item {
+  background-color: var(--bg-card);
+  border-radius: var(--border-radius);
+  padding: 20px;
+  text-align: center;
+  box-shadow: var(--sombra-suave);
+  transition: var(--transicion-normal);
+}
+
+.productos .item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.productos .item img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: var(--border-radius-small);
+  margin-bottom: 15px;
+}
+
+.productos .item h3 {
+  color: var(--color-primario);
+  margin-bottom: 10px;
+  font-size: 1.3rem;
+}
+
+.productos .item p {
+  color: var(--texto-claro);
+  line-height: 1.6;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .banner {
+    padding: 100px 20px;
+  }
+  
+  .banner h1 {
+    font-size: 2.2rem;
+  }
+  
+  .banner p {
+    font-size: 1.1rem;
+  }
+  
+  .presentacion .container {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .presentacion .texto {
+    min-width: auto;
+  }
+  
+  .presentacion h2 {
+    text-align: center;
+  }
+  
+  .productos .grid {
+    grid-template-columns: 1fr;
+  }
+}

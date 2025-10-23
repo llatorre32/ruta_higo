@@ -1,0 +1,71 @@
+/* Página de gracias */
+.gracias-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background-color: var(--bg-principal);
+}
+
+.gracias {
+  width: 100%;
+  padding: var(--padding-seccion);
+}
+
+.gracias .container {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: var(--bg-blanco);
+  padding: 60px 40px;
+  border-radius: var(--border-radius);
+  box-shadow: var(--sombra-suave);
+}
+
+.logo-gracias {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  margin-bottom: 30px;
+  box-shadow: var(--sombra-suave);
+}
+
+.gracias h1 {
+  color: var(--color-primario);
+  margin-bottom: 20px;
+  font-size: 2.5rem;
+}
+
+.gracias p {
+  font-size: 1.2rem;
+  color: var(--texto-claro);
+  margin-bottom: 40px;
+  line-height: 1.6;
+}
+
+.gracias .btn {
+  padding: 15px 30px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .gracias .container {
+    padding: 40px 30px;
+  }
+  
+  .gracias h1 {
+    font-size: 2rem;
+  }
+  
+  .gracias p {
+    font-size: 1.1rem;
+  }
+  
+  .logo-gracias {
+    width: 100px;
+    height: 100px;
+  }
+}

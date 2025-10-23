@@ -1,0 +1,154 @@
+/* Página Nosotros */
+.nosotros-page {
+  min-height: 100vh;
+}
+
+/* Presentación */
+.presentacion {
+  padding: var(--padding-seccion);
+  background-color: var(--bg-blanco);
+}
+
+.presentacion .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.presentacion .texto {
+  flex: 1 1 50%;
+  min-width: 300px;
+}
+
+.presentacion .imagen {
+  flex: 1 1 40%;
+  max-width: 500px;
+  width: 100%;
+  border-radius: var(--border-radius);
+  box-shadow: var(--sombra-suave);
+}
+
+.presentacion h1 {
+  color: var(--color-primario);
+  margin-bottom: 30px;
+  font-size: 2.5rem;
+}
+
+.presentacion p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin-bottom: 20px;
+  color: var(--texto-claro);
+}
+
+/* Proceso artesanal */
+.proceso {
+  padding: var(--padding-seccion);
+  background-color: var(--bg-principal);
+}
+
+.proceso h2 {
+  color: var(--color-primario);
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+.grid-proceso {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.paso {
+  background-color: var(--bg-blanco);
+  padding: 30px;
+  border-radius: var(--border-radius);
+  text-align: center;
+  box-shadow: var(--sombra-suave);
+  transition: var(--transicion-normal);
+}
+
+.paso:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.paso img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: var(--border-radius-small);
+  margin-bottom: 20px;
+}
+
+.paso h3 {
+  color: var(--color-primario);
+  margin-bottom: 15px;
+  font-size: 1.4rem;
+}
+
+.paso p {
+  color: var(--texto-claro);
+  line-height: 1.6;
+}
+
+/* Misión */
+.mision {
+  padding: var(--padding-seccion);
+  background-color: var(--bg-blanco);
+  text-align: center;
+}
+
+.mision h2 {
+  color: var(--color-primario);
+  margin-bottom: 40px;
+}
+
+.mision p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  max-width: 800px;
+  margin: 0 auto 30px;
+  color: var(--texto-claro);
+}
+
+.imagen-mision {
+  max-width: 600px;
+  width: 100%;
+  border-radius: var(--border-radius);
+  box-shadow: var(--sombra-suave);
+  margin-top: 40px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .presentacion .container {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .presentacion .texto {
+    min-width: auto;
+  }
+  
+  .presentacion h1 {
+    font-size: 2rem;
+  }
+  
+  .grid-proceso {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  
+  .paso {
+    padding: 25px;
+  }
+  
+  .mision p {
+    font-size: 1rem;
+  }
+}

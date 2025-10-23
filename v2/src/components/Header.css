@@ -1,0 +1,72 @@
+/* Encabezado principal */
+header {
+  background-color: var(--color-primario);
+  color: var(--texto-blanco);
+  padding: 10px 40px;
+  box-shadow: var(--sombra-header);
+  border-bottom: 3px solid var(--bg-principal);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.logo {
+  height: 60px;
+  width: auto;
+  border-radius: 50%;
+}
+
+/* Navegación */
+.menu {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
+}
+
+.menu a {
+  color: var(--texto-blanco);
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 500;
+  transition: var(--transicion-normal);
+  padding-bottom: 3px;
+  border-bottom: 2px solid transparent;
+}
+
+.menu a:hover,
+.menu a.active {
+  border-bottom: 2px solid var(--bg-principal);
+  text-decoration: none;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  header {
+    padding: 10px 20px;
+  }
+  
+  .header-content {
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .menu {
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .menu a {
+    font-size: 1rem;
+  }
+}
