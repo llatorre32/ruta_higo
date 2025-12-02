@@ -1,44 +1,34 @@
-import higo1 from '../assets/img/productos/higo1.jpg';
-import higo2 from '../assets/img/productos/higo2.jpg';
-import plantin1 from '../assets/img/productos/plantin1.jpg';
-import mermelada from '../assets/img/productos/mermelada.jpg';
+import { useState, useEffect } from 'react';
+import defaultImage from '../assets/img/productos/higo1.jpg';
 import './Productos.css';
 
 const Productos = () => {
-  const productos = [
-    {
-      id: 1,
-      imagen: higo1,
-      titulo: "Dulce de Higo Artesanal",
-      descripcion: "Frascos de 500g elaborados con fruta seleccionada y azúcar orgánica.",
-      precio: "$2.500",
-      accion: "Realizar pedido"
-    },
-    {
-      id: 2,
-      imagen: higo2,
-      titulo: "Higos frescos de temporada",
-      descripcion: "Higos frescos recién cosechados, listos para disfrutar.",
-      precio: "$2.800",
-      accion: "Realizar pedido"
-    },
-    {
-      id: 3,
-      imagen: plantin1,
-      titulo: "Plantines de Higuera",
-      descripcion: "Variedades locales, listas para trasplante y cultivo.",
-      precio: "$1.200",
-      accion: "Consultar disponibilidad"
-    },
-    {
-      id: 4,
-      imagen: mermelada,
-      titulo: "Mermelada de Higo con Nuez",
-      descripcion: "Combinación perfecta entre el sabor dulce del higo y la textura de la nuez.",
-      precio: "$3.000",
-      accion: "Realizar pedido"
-    }
-  ];
+  const [productos, setProductos] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const fetchProductos = async () => {
+      try {
+        setLoading(true);
+        const response = await fetch('http://localhost:5173/api/productos/publico?limit=10');
+        
+        if (!response.ok) {
+          throw new Error('Error al cargar los productos');
+        }
+        
+        const data = await response.json();
+        setProductos(data.productos || []);
+      } catch (err) {
+        setError(err.message);
+        console.error('Error fetching productos:', err);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchProductos();
+  }, []);
 
   return (
     <div className="productos-page">
@@ -51,19 +41,49 @@ const Productos = () => {
             Dulces, almíbares y plantines listos para llevarte un pedacito de nuestra tierra.
           </p>
 
-          <div className="catalogo-grid">
-            {productos.map((producto) => (
-              <div key={producto.id} className="card">
-                <img src={producto.imagen} alt={producto.titulo} />
-                <div className="card-content">
-                  <h3>{producto.titulo}</h3>
-                  <p>{producto.descripcion}</p>
-                  <span className="precio">{producto.precio}</span>
-                  <button className="btn">{producto.accion}</button>
+          {loading && (
+            <div className="loading">
+              <p>Cargando productos...</p>
+            </div>
+          )}
+
+          {error && (
+            <div className="error">
+              <p>Error: {error}</p>
+            </div>
+          )}
+
+          {!loading && !error && productos.length === 0 && (
+            <div className="no-productos">
+              <p>No hay productos disponibles en este momento.</p>
+            </div>
+          )}
+
+          {!loading && !error && productos.length > 0 && (
+            <div className="catalogo-grid">
+              {productos.map((producto) => (
+                <div key={producto.id} className="card">
+                  <img 
+                    src={producto.imagen ? `http://localhost:5173${producto.imagen}` : defaultImage} 
+                    alt={producto.nombre}
+                    onError={(e) => {
+                      e.target.src = defaultImage;
+                    }}
+                  />
+                  <div className="card-content">
+                    <h3>{producto.nombre}</h3>
+                    <p>{producto.descripcion}</p>
+                    <span className="precio">${(producto.precio_venta / 100).toLocaleString('es-AR', { minimumFractionDigits: 2 })}</span>
+                    <p className="codigo">Código: {producto.codigo}</p>
+                    <p className="stock">Stock: {producto.stock_actual} unidades</p>
+                    <button className="btn">
+                      {producto.stock_actual > 0 ? 'Realizar pedido' : 'Sin stock'}
+                    </button>
+                  </div>
                 </div>
-              </div>
-            ))}
-          </div>
+              ))}
+            </div>
+          )}
         </div>
       </section>
     </div>

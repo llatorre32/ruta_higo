@@ -37,7 +37,6 @@ footer p {
 .redes img {
   width: 30px;
   height: 30px;
-  filter: brightness(0) invert(1); /* Hace las imágenes blancas */
 }
 
 /* Responsive */

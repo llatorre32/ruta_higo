@@ -82,6 +82,47 @@
   display: block;
 }
 
+.codigo, .stock {
+  font-size: 0.9rem;
+  color: var(--texto-claro);
+  margin-bottom: 8px;
+}
+
+.codigo {
+  font-weight: 500;
+}
+
+.stock {
+  font-weight: 600;
+  color: var(--color-primario);
+}
+
+.loading, .error, .no-productos {
+  text-align: center;
+  padding: 40px 20px;
+  margin: 40px auto;
+  max-width: 600px;
+  border-radius: var(--border-radius);
+}
+
+.loading {
+  background-color: var(--bg-blanco);
+  color: var(--color-primario);
+  font-size: 1.1rem;
+}
+
+.error {
+  background-color: #fee;
+  color: #d63384;
+  border: 1px solid #f5c2c7;
+}
+
+.no-productos {
+  background-color: var(--bg-blanco);
+  color: var(--texto-claro);
+  font-style: italic;
+}
+
 .card .btn {
   width: 100%;
   padding: 12px;
