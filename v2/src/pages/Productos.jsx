@@ -75,10 +75,7 @@ const Productos = () => {
                     <p>{producto.descripcion}</p>
                     <span className="precio">${(producto.precio_venta / 100).toLocaleString('es-AR', { minimumFractionDigits: 2 })}</span>
                     <p className="codigo">Código: {producto.codigo}</p>
-                    <p className="stock">Stock: {producto.stock_actual} unidades</p>
-                    <button className="btn">
-                      {producto.stock_actual > 0 ? 'Realizar pedido' : 'Sin stock'}
-                    </button>
+                    <p className="stock">Stock: {producto.stock_actual} unidades</p>                    
                   </div>
                 </div>
               ))}
