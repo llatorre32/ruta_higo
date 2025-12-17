@@ -5,9 +5,23 @@ import { initDatabase } from '$lib/database.js';
 initDatabase();
 
 export async function handle({ event, resolve }) {
-  // Obtener el token de las cookies
+
+  // 👉 CORS: responder preflight
+  if (event.request.method === 'OPTIONS') {
+    return new Response(null, {
+      status: 204,
+      headers: {
+        'Access-Control-Allow-Origin': 'http://localhost:5174',
+        'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
+        'Access-Control-Allow-Headers': 'Content-Type, Authorization',
+        'Access-Control-Allow-Credentials': 'true'
+      }
+    });
+  }
+
+  // 👉 Sesión
   const token = event.cookies.get('session_token');
-  
+
   if (token) {
     const session = verifySession(token);
     if (session) {
@@ -19,10 +33,15 @@ export async function handle({ event, resolve }) {
         rol: session.rol
       };
     } else {
-      // Token inválido o expirado, eliminar cookie
       event.cookies.delete('session_token', { path: '/' });
     }
   }
-  
-  return resolve(event);
+
+  const response = await resolve(event);
+
+  // 👉 CORS: headers en respuesta normal
+  response.headers.set('Access-Control-Allow-Origin', '*');
+  response.headers.set('Access-Control-Allow-Credentials', 'true');
+
+  return response;
 }

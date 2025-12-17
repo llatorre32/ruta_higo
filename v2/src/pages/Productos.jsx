@@ -11,7 +11,7 @@ const Productos = () => {
     const fetchProductos = async () => {
       try {
         setLoading(true);
-        const response = await fetch('http://localhost:5173/api/productos/publico?limit=10');
+        const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/productos/publico?limit=10`);
         
         if (!response.ok) {
           throw new Error('Error al cargar los productos');
@@ -64,7 +64,7 @@ const Productos = () => {
               {productos.map((producto) => (
                 <div key={producto.id} className="card">
                   <img 
-                    src={producto.imagen ? `http://localhost:5173${producto.imagen}` : defaultImage} 
+                    src={producto.imagen ? `${import.meta.env.VITE_API_BASE_URL.replace('/api', '')}${producto.imagen}` : defaultImage} 
                     alt={producto.nombre}
                     onError={(e) => {
                       e.target.src = defaultImage;
