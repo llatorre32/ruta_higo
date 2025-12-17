@@ -78,7 +78,7 @@ Enviado desde el formulario web de Ruta del Higo Catamarca`
     <div className="contacto-page">
       <section className="contacto">
         <div className="container">
-          <h1>Contactouu</h1>
+          <h1>Contacto</h1>
           <p className="intro">
             Si querés realizar un pedido, consultar disponibilidad o conocer más sobre nuestros productos,
             completá el formulario o comunicate por nuestras redes sociales.
@@ -134,14 +134,14 @@ Enviado desde el formulario web de Ruta del Higo Catamarca`
               <h3>Datos del emprendimiento</h3>
               <p><strong>Ruta del Higo Catamarca</strong></p>
               <p>📍 El Pantanillo, San Fernando del Valle de Catamarca</p>
-              <p>📞 0383 430-6994</p>
+              <p>📞 <a href="https://wa.me/5493834306994" target="_blank" rel="noopener noreferrer">0383 430-6994</a></p>
               <p>📧 higoscatamarca@gmail.com</p>
 
               <h3>Seguinos</h3>
               <div className="redes-contacto">
-                <a href="#"><img src={facebookIcon} alt="Facebook" /></a>
-                <a href="#"><img src={instagramIcon} alt="Instagram" /></a>
-                <a href="#"><img src={whatsappIcon} alt="WhatsApp" /></a>
+                <a href="https://www.facebook.com/profile.php?id=100086834407348" target="_blank" rel="noopener noreferrer"><img src={facebookIcon} alt="Facebook" /></a>
+                <a href="https://www.instagram.com/rutadelhigo.catamarca/" target="_blank" rel="noopener noreferrer"><img src={instagramIcon} alt="Instagram" /></a>
+                <a href="https://wa.me/5493834306994" target="_blank" rel="noopener noreferrer"><img src={whatsappIcon} alt="WhatsApp" /></a>
               </div>
             </div>
           </div>
