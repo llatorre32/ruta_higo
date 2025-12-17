@@ -8,8 +8,8 @@
 
 	export let data;
 	$: user = $page.data.user;
-	$: productos = data.productos;
-	$: categorias = data.categorias;
+	$: productos = data.productos || [];
+	$: categorias = data.categorias || [];
 
 	// Setup auto-refresh
 	onMount(() => {

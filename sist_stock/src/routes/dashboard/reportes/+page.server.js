@@ -7,7 +7,12 @@ import {
   getReporteProductosMasVendidos
 } from '$lib/stock.js';
 
-export function load() {
+export function load({ depends }) {
+  depends('app:productos');
+  depends('app:movimientos');
+  depends('app:ventas');
+  depends('app:reportes');
+  
   try {
     const productosBajoStock = getProductosBajoStock();
     const resumen = getResumenStock();

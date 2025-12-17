@@ -6,8 +6,8 @@
 	import { setupAutoRefresh, cleanupAutoRefresh } from '$lib/utils/autoRefresh.js';
 
 	export let data;
-	$: movimientos = data.movimientos;
-	$: productos = data.productos;
+	$: movimientos = data.movimientos || [];
+	$: productos = data.productos || [];
 
 	// Setup auto-refresh
 	onMount(() => {

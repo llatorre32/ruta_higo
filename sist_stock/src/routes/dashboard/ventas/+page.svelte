@@ -4,7 +4,7 @@
   import { setupAutoRefresh, cleanupAutoRefresh } from '$lib/utils/autoRefresh.js';
 
   export let data;
-  let ventas = data.ventas || [];
+  $: ventas = data.ventas || [];
   
   // Setup auto-refresh
   onMount(async () => {

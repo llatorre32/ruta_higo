@@ -1,6 +1,9 @@
 import { getProductos, getCategorias } from '$lib/stock.js';
 
-export function load() {
+export function load({ depends }) {
+  depends('app:productos');
+  depends('app:categorias');
+  
   try {
     const productos = getProductos();
     const categorias = getCategorias();

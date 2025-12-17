@@ -1,11 +1,16 @@
 <script>
 	export let data;
-	$: productosBajoStock = data.productosBajoStock;
-	$: resumen = data.resumen;
-	$: ultimosMovimientos = data.ultimosMovimientos;
-	$: ventasMensuales = data.ventasMensuales;
-	$: ventasPorVendedor = data.ventasPorVendedor;
-	$: productosMasVendidos = data.productosMasVendidos;
+	$: productosBajoStock = data.productosBajoStock || [];
+	$: resumen = data.resumen || {
+		totalProductos: 0,
+		productosBajoStock: 0,
+		valorInventario: 0,
+		totalCategorias: 0
+	};
+	$: ultimosMovimientos = data.ultimosMovimientos || [];
+	$: ventasMensuales = data.ventasMensuales || [];
+	$: ventasPorVendedor = data.ventasPorVendedor || [];
+	$: productosMasVendidos = data.productosMasVendidos || [];
 
 	function formatCurrency(value) {
 		return new Intl.NumberFormat('es-AR', {
