@@ -8,7 +8,7 @@
 
 	export let data;
 	$: user = $page.data.user;
-	$: categorias = data.categorias;
+	$: categorias = data.categorias || [];
 
 	// Setup auto-refresh
 	onMount(() => {

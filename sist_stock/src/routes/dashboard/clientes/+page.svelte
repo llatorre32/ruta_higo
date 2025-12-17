@@ -6,7 +6,7 @@
   import { setupAutoRefresh, cleanupAutoRefresh } from '$lib/utils/autoRefresh.js';
 
   export let data;
-  let clientes = data.clientes || [];
+  $: clientes = data.clientes || [];
   
   // Setup auto-refresh
   onMount(() => {

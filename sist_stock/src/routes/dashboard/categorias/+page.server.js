@@ -1,6 +1,8 @@
 import { getCategorias } from '$lib/stock.js';
 
-export function load() {
+export function load({ depends }) {
+  depends('app:categorias');
+  
   try {
     const categorias = getCategorias();
     return { categorias };
